@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+    <main>
+        <h1>Liste des étudiants de la promo : Zenith</h1>
+        <ul class="cards">
+            <% students.forEach(student=> { %>
+                <li class="card">
+                    <a href="/student/<%= student.id %>">
+                        <figure>
+                            <img src="<%= student.profile_picture_url %>" alt="">
+                            <figcaption>
+                                <%= student.first_name %>
+                                    <%= student.last_name %>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
+
+        <nav class="pagination">
+            <ul>
+                <li><a href="#">Précedent</a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><span>2</span></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">Suivant</a></li>
+            </ul>
+        </nav>
+    </main>
+    <%- include('partials/footer') %>
